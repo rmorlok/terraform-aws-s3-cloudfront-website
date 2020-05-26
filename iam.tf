@@ -114,7 +114,7 @@ EOF
 }
 
 resource "aws_iam_group" "deployers" {
-  name = "wcd-candidate-webui-deployers"
+  name = "${var.deployment_name}_deployers"
   path = "/users/"
 }
 
