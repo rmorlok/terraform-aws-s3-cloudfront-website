@@ -118,12 +118,12 @@ resource "aws_iam_group" "deployers" {
   path = "/users/"
 }
 
-resource "aws_iam_group_policy_attachment" "wcd-deployers-s3-candidate-webui-deploy" {
+resource "aws_iam_group_policy_attachment" "deployers_s3_policy_attachment" {
   group      = aws_iam_group.deployers.name
   policy_arn = aws_iam_policy.s3-deploy.arn
 }
 
-resource "aws_iam_group_policy_attachment" "wcd-deployers-cloudfront-candidate-webui-deploy" {
+resource "aws_iam_group_policy_attachment" "deployers_cloudfront_policy_attachment" {
   group      = aws_iam_group.deployers.name
   policy_arn = aws_iam_policy.cloudfront-deploy.arn
 }
